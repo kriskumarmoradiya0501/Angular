@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../angular-1.8.2/angular.min.js"></script>
+</head>
+<body ng-app>
+<h3>Message Box Designer</h3>
+
+    Enter your text message: 
+    <input type="text" ng-model="msgTxt"><br><br>
+
+    Choose background color:
+    <input type="color" ng-model="backgroundColor"><br><br>
+
+    Choose Message Box height: 
+    <input type="number" ng-model="msgHeight"><br><br>
+
+    Choose Message Box width: 
+    <input type="number" ng-model="msgWidth"><br><br>
+
+    Choose Message Box Padding: 
+    <input type="number" ng-model="padding1"><br><br>
+
+    Choose Message Box border size: 
+    <input type="number" ng-model="bsize"><br><br>
+
+    Choose Message Box border Type: 
+    <input type="text" ng-model="btype"><br><br>
+
+    Choose Message Box border color:
+    <input type="color" ng-model="bcolor"><br><br>
+
+    <hr>
+
+    <div ng-style="{
+             'background-color': backgroundColor,
+             'height': msgHeight + 'px',
+             'width': msgWidth + 'px',
+             'padding': padding1 + 'px',
+             'border': bsize + 'px ' + btype + ' ' + bcolor
+         }">
+        
+        <h1 style="margin: 0;">{{ msgTxt }}</h1>
+        
+    </div>
+</body>
+</html>

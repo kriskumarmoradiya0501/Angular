@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AngularJS Two-Way Binding</title>
+    <script src="../../angular-1.8.2/angular.min.js"></script>
+</head>
+<body>
+
+    <div ng-app="myApp" ng-controller="myCtrl">
+
+        <h2>Arthmetic calculator</h2>
+
+        <label>First Number :</label>
+        <input type="text" ng-model="firstNumber" placeholder="Enter first number">
+        <br><br>
+
+        <label>Second Number:</label>
+        <input type="text" ng-model="secondNumber" placeholder="Enter second number">
+        
+        <hr>
+
+        <h3>Full Name: <span>{{ firstNumber + " " + secondNumber }}</span></h3>
+        <h3>Sum : <span>{{ sum() }}</span></h3>
+        <h3>Subtraction : <span>{{ subtract() }}</span></h3>    
+        <h3>Multiplication : <span>{{ multiply() }}</span></h3>
+        <h3>Division : <span>{{ divide() }}</span></h3>
+
+
+    </div>
+
+    <script>
+        var app = angular.module('myApp', []);
+        
+        app.controller('myCtrl', function($scope) {
+            $scope.firstNumber = "";
+            $scope.secondNumber = "";
+
+            $scope.sum = function() {
+                return parseFloat($scope.firstNumber) + parseFloat($scope.secondNumber);
+            };
+            $scope.subtract = function() {
+                return parseFloat($scope.firstNumber) - parseFloat($scope.secondNumber);
+            };
+    
+            $scope.multiply = function() {
+                return parseFloat($scope.firstNumber) * parseFloat($scope.secondNumber);
+            };
+    
+            $scope.divide = function() {
+                if (parseFloat($scope.secondNumber) !== 0) {
+                    return parseFloat($scope.firstNumber) / parseFloat($scope.secondNumber);
+                } else {
+                    return "Cannot divide by zero";
+                }
+            };
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Register</title>
+</head>
+<body>
+  <h2>Register</h2>
+  <form id="regForm">
+    <div>
+      <label for="regUsername">Username</label>
+      <input id="regUsername" name="regUsername" type="text" />
+    </div>
+    <div>
+      <label for="regPassword">Password</label>
+      <input id="regPassword" name="regPassword" type="password" />
+    </div>
+    <!-- Users register as student by default -->
+    <input type="hidden" id="regRole" name="regRole" value="student" />
+    <div>
+      <button type="submit">Register</button>
+    </div>
+  </form>
+  <div id="regMessage" role="status" aria-live="polite"></div>
+  <p><a href="index.html">Back to Login</a></p>
+
+  <script src="data.js"></script>
+  <script src="registration.js"></script>
+</body>
+</html>

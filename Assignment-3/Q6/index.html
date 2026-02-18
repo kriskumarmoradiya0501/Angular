@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <script src="../../angular-1.8.2/angular.min.js"></script>
+    <script src="modul/myContoller.js"></script>
+</head>
+
+<body ng-app="myApp" ng-controller="myCtrl1">
+
+    <h3>Currency Converter</h3>
+
+    <input type="number" ng-model="amount" placeholder="Enter Amount">
+    <br><br>
+
+    <label>From:</label>
+    <select ng-model="fromCountry">
+        <option value="ind">India (INR)</option>
+        <option value="usa">USA (USD)</option>
+        <option value="uk">UK (GBP)</option>
+        <option value="aus">Australia (AUD)</option>
+        <option value="can">Canada (CAD)</option>
+        <option value="ger">Germany (EUR)</option>
+        <option value="fra">France (EUR)</option> 
+        <option value="ita">Italy (EUR)</option>
+        <option value="jpn">Japan (JPY)</option>
+    </select>
+
+    <label>To:</label>
+    <select ng-model="toCountry">
+        <option value="ind">India (INR)</option>
+        <option value="usa">USA (USD)</option>
+        <option value="uk">UK (GBP)</option>
+        <option value="aus">Australia (AUD)</option>
+        <option value="can">Canada (CAD)</option>
+        <option value="ger">Germany (EUR)</option>
+        <option value="fra">France (EUR)</option> 
+        <option value="ita">Italy (EUR)</option>
+        <option value="jpn">Japan (JPY)</option>
+    </select>
+
+    <hr>
+
+    <h2>
+        Converted Amount: 
+        <span>
+            {{ convertCurrency(amount, fromCountry, toCountry) }}
+        </span>
+    </h2>
+
+</body>
+</html>

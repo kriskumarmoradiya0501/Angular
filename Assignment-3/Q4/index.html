@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Box Designer</title>
+    <script src="../../angular-1.8.2/angular.min.js"></script>
+</head>
+<body ng-app ng-init="
+    msgTxt=''; 
+    backgroundColor='#e0f7fa'; 
+    msgHeight=0; 
+    msgWidth=0; 
+    padding1=0; 
+    bsize=0; 
+    btype=''; 
+    bcolor='#006064'">
+
+    <h3>Message Box Designer</h3>
+
+    <label>Message Text:</label>
+    <input type="text" ng-model="msgTxt"><br>
+
+    <label>Background Color:</label>
+    <input type="color" ng-model="backgroundColor"><br>
+
+    <label>Height (px):</label>
+    <input type="number" ng-model="msgHeight"><br>
+
+    <label>Width (px):</label>
+    <input type="number" ng-model="msgWidth"><br>
+
+    <label>Padding (px):</label>
+    <input type="number" ng-model="padding1"><br>
+
+    <label>Border Size (px):</label>
+    <input type="number" ng-model="bsize"><br>
+
+    <label>Border Color:</label>
+    <input type="color" ng-model="bcolor"><br>
+
+    <label>Border Style:</label>
+    <select ng-model="btype">
+        <option value="solid">Solid</option>
+        <option value="dotted">Dotted</option>
+        <option value="dashed">Dashed</option>
+        <option value="double">Double</option>
+        <option value="groove">Groove</option>
+    </select>
+    <br><br>
+
+    <hr>
+
+    <h3>Result:</h3>
+
+    <div ng-style="{
+             'background-color': backgroundColor,
+             'height': msgHeight + 'px',
+             'width': msgWidth + 'px',
+             'padding': padding1 + 'px',
+             'border-width': bsize + 'px',
+             'border-style': btype,
+             'border-color': bcolor
+         }">
+        
+        <h2 style="margin: 0; text-align: center;">{{ msgTxt }}</h2>
+        
+    </div>
+
+</body>
+</html>

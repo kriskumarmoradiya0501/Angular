@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>User Profile</title>
+</head>
+<body>
+  <h1>Your Profile</h1>
+  <div id="profile"></div>
+
+  <h2>Change Password</h2>
+  <form id="pwForm">
+    <div>
+      <label for="newPw">New Password</label>
+      <input id="newPw" type="password" />
+    </div>
+    <div>
+      <button type="submit">Change Password</button>
+    </div>
+  </form>
+
+  <div id="msg" role="status" aria-live="polite"></div>
+  <p><button id="logoutBtn">Logout</button></p>
+
+  <script src="data.js"></script>
+  <script src="user.js"></script>
+</body>
+</html>

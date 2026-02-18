@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Panel</title>
+</head>
+<body>
+  <h1>Admin Panel (admin)</h1>
+  <button id="logoutBtn">Logout</button>
+
+  <h2>Add User</h2>
+  <form id="addForm">
+    <div>
+      <input id="newUsername" placeholder="Username" type="text" />
+      <input id="newPassword" placeholder="Password" type="password" />
+      <select id="newRole">
+        <option value="student">student</option>
+        <option value="admin">admin</option>
+      </select>
+      <button id="addUserBtn" type="submit">Add User</button>
+    </div>
+  </form>
+  <div id="message" role="status" aria-live="polite"></div>
+
+  <h2>Users</h2>
+  <div>
+    <label for="searchInput">Search</label>
+    <input id="searchInput" placeholder="Search by username" />
+  </div>
+
+  <table border="1">
+    <thead>
+      <tr><th>#</th><th>Username</th><th>Role</th><th>Actions</th></tr>
+    </thead>
+    <tbody id="userList"></tbody>
+  </table>
+
+  <script src="data.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

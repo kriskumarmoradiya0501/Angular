@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../angular-1.8.2/angular.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var app1Element = document.getElementById('app1');
+            angular.bootstrap(app1Element, []);
+        });
+    </script>
+</head>
+
+<body>
+
+    <section ng-app>
+        Enter your name :
+        <input type="text" ng-model="userName">
+        <h3>Welcome : <span ng-bind="userName"></span></h3>
+        Sum : {{1+2+3}}
+    </section>
+    <section id="app1">
+        Sum : {{1*2/3}}
+    </section>
+
+
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular Demo</title>
+
+    <script src="../../angular-1.8.2/angular.min.js"></script>
+    <script src="modul/myConteoller.js"></script>
+
+</head>
+
+<body ng-controller="myCtrl1">
+
+    <input type="search" ng-model="code" placeholder="Type fswd or python">
+
+    <h2>Your Code : {{code}}</h2>
+<h3 style="color: blue;">
+        Your Subject: {{ subject[subList[code-1].toLowerCase()] }}
+    </h3>
+    <ol>
+        <li ng-repeat="item in subList track by $index">
+            {{item}}
+        </li>
+    </ol>
+
+</body>
+</html>
